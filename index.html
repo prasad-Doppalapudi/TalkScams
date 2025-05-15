@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Google Analytics -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDP7PV4WH6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BDP7PV4WH6');
-</script>
 <head>
-  <meta name="description" content="Report and track scams in real-time. Protect yourself and others.">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDP7PV4WH6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BDP7PV4WH6');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Report and track scams in real-time. Protect yourself and others.">
   <title>TalkScams – Crowdsourced Scam Alerts</title>
   <style>
-    /* Minimalist CSS (customize colors!) */
+    /* Minimalist CSS */
     body {
       font-family: 'Helvetica', Arial, sans-serif;
       line-height: 1.6;
@@ -36,7 +35,7 @@
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    h1 { margin: 0; }
+    h1, h2, h3 { margin: 0 0 1rem; }
     .cta {
       background: #e74c3c;
       color: white;
@@ -47,22 +46,31 @@
       border-radius: 4px;
       display: inline-block;
       margin: 1rem 0;
+      text-decoration: none;
     }
-    .scam-feed {
+    .scam-feed, .trust-section {
       background: white;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.5rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
     }
     .scam-card {
       border-bottom: 1px solid #eee;
       padding: 1rem 0;
+    }
+    .trust-badge {
+      background: #f8f9fa;
+      border-left: 4px solid #2c3e50;
+      padding: 1rem;
+      margin: 1.5rem 0;
     }
     footer {
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
       color: #777;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
@@ -82,7 +90,24 @@
       <a href="#report" class="cta">Report a Scam</a>
     </section>
 
-    <!-- Live Scam Feed (Airtable embed later) -->
+    <!-- How It Works -->
+    <section class="trust-section">
+      <h3>🔒 How TalkScams Works</h3>
+      <div class="trust-badge">
+        <h4>1. Submit a Report</h4>
+        <p>Share details of scams you encounter (anonymously if preferred).</p>
+      </div>
+      <div class="trust-badge">
+        <h4>2. Manual Verification</h4>
+        <p>Our team reviews each submission to ensure accuracy before publishing.</p>
+      </div>
+      <div class="trust-badge">
+        <h4>3. Community Alerts</h4>
+        <p>Verified scams appear in real-time to warn others.</p>
+      </div>
+    </section>
+
+    <!-- Live Scam Feed -->
     <section class="scam-feed">
       <h3>⚠️ Recently Reported Scams</h3>
       <div class="scam-card">
@@ -93,30 +118,23 @@
         <h4>"Amazon Refund" Phone Scam</h4>
         <p>Submitted 1 day ago | <strong>Phishing</strong></p>
       </div>
-      <!-- Dynamic feed will go here -->
     </section>
 
-    <!-- Report Form (Tally.so embed) -->
-    <section id="report">
+    <!-- Report Form -->
+    <section id="report" class="scam-feed">
       <h3>Report a Scam</h3>
       <iframe 
         src="https://tally.so/embed/w4dXDb?hideTitle=1" 
         width="100%" 
         height="500" 
         frameborder="0"
-        style="border-radius: 8px;"
+        style="border-radius: 8px; border: 1px solid #eee;"
       ></iframe>
     </section>
-    <section>
-    <div class="trust-badge">  
-      <h3>How Reports Are Verified</h3>  
-      <p>Every submission is manually reviewed by our team.</p>  
-    </div>  
   </div>
-  </section>
 
   <footer>
-    <p>© 2024 TalkScams.com | <a href="/privacy">Privacy</a></p>
+    <p>© 2024 TalkScams.com | <a href="/privacy">Privacy</a> | <a href="https://github.com/prasad-Doppalapudi/talkscams" target="_blank">GitHub</a></p>
   </footer>
 </body>
 </html>

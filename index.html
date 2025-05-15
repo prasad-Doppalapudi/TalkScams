@@ -72,6 +72,20 @@
       color: #777;
       border-top: 1px solid #eee;
     }
+    /* Thank-you message */
+    #thankYou {
+      display: none;
+      background: #2ecc71;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    #thankYou h3 {
+      color: white;
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +121,13 @@
       </div>
     </section>
 
+    <!-- Thank-you message (hidden by default) -->
+    <div id="thankYou">
+      <h3>Thank You for Your Report! 🎉</h3>
+      <p>Your submission helps protect others. We'll review it shortly.</p>
+      <p><a href="/" style="color: white; text-decoration: underline;">Return to homepage</a></p>
+    </div>
+
     <!-- Live Scam Feed -->
     <section class="scam-feed">
       <h3>⚠️ Recently Reported Scams</h3>
@@ -129,6 +150,7 @@
         height="500" 
         frameborder="0"
         style="border-radius: 8px; border: 1px solid #eee;"
+        onload="if(window.location.search.includes('thank_you')) document.getElementById('thankYou').style.display = 'block';"
       ></iframe>
     </section>
   </div>
@@ -136,5 +158,14 @@
   <footer>
     <p>© 2024 TalkScams.com | <a href="/privacy">Privacy</a> | <a href="https://github.com/prasad-Doppalapudi/talkscams" target="_blank">GitHub</a></p>
   </footer>
+
+  <script>
+    // Show thank-you message if URL has ?thank_you parameter
+    if(window.location.search.includes('thank_you')) {
+      document.getElementById('thankYou').style.display = 'block';
+      // Smooth scroll to thank-you message
+      document.getElementById('thankYou').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
